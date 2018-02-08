@@ -14,4 +14,5 @@ elseif(isset($_POST["raison"]) AND (strlen($_POST["nomEnfant"]) > 0) AND (strlen
   echo $excuse;
 }
 
+$pourquoi = $_POST['raison'];
 ?>
