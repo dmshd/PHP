@@ -67,41 +67,63 @@ $toi = array(
      <h3>Décris-toi dans une tableau $moi. Utilise au moins deux valeurs de chaque type (texte, booléenne, Int).<br>
       Rajoute tes hobbies sous forme de tableau dans ton tableau. Crée un deuxième tableau similaire qui décrive ton papa et ses hobbies.<br>
       À ton tableau $moi, ajoute un élément 'papa' dont la valeur équivaut à $papa. Affiche le contenu de $moi via print_r().
-      </h3>
-      <p><pre><?php print_r($moi) ?></pre></p>
-      <h3>Trouve la fonction PHP qui permette de compter le nombre d'éléments d'un tableau.Afficher le nombre d'hobby de $papa. Compte tes propres hobbies.
+    </h3>
+    <p><pre><?php print_r($moi) ?></pre></p>
+    <h3>Trouve la fonction PHP qui permette de compter le nombre d'éléments d'un tableau.Afficher le nombre d'hobby de $papa. Compte tes propres hobbies.
 Additionne les deux et affiche le résultat.</h3>
-      <p><pre>count()</pre><p>
-      <p>
-        <?php
-          $nbrHobbyPapa = count($papa['hobbies']);
-          echo "Nombre de hobbies de \$papa :  $nbrHobbyPapa<br>";
-          $nbrHobbyMoi = count($moi['hobbies']);
-          echo "Nombre de hobbies de \$moi :  $nbrHobbyPapa<br>";
-          $addhobbies = $nbrHobbyPapa + $nbrHobbyMoi;
-          echo "Addition : $addhobbies";
-        ?>
-        <h3>la bonne syntaxe pour ajouter le hobby "Taxidermie" à ton tableau de "hobbies".</h3>
-        <?php
-          array_push($moi['hobbies'], 'Taxidermie');
-          // print_r($moi['hobbies'][3]);
-          ?>
-          <pre>array_push(\$moi['hobbies'], 'Taxidermie');</pre>
+    <p><pre>count()</pre><p>
+    <>
+    <?php
+      $nbrHobbyPapa = count($papa['hobbies']);
+      echo "Nombre de hobbies de \$papa :  $nbrHobbyPapa<br>";
+      $nbrHobbyMoi = count($moi['hobbies']);
+      echo "Nombre de hobbies de \$moi :  $nbrHobbyPapa<br>";
+      $addhobbies = $nbrHobbyPapa + $nbrHobbyMoi;
+      echo "Addition : $addhobbies";
+    ?>
+    <h3>la bonne syntaxe pour ajouter le hobby "Taxidermie" à ton tableau de "hobbies".</h3>
+    <?php
+      array_push($moi['hobbies'], 'Taxidermie');
+      // print_r($moi['hobbies'][3]);
+    ?>
+    <pre>array_push(\$moi['hobbies'], 'Taxidermie');</pre>
 
-        <h3>Remplacer ton nom de famille par Dieudonné</h3>
-          <pre>$moi['prenom'] = 'Dieudonné';"</pre>
-         <h3>Intersection des hobbies en commun</h3>
-          <pre>$enfant = array_intersect($moi['hobbies'], $toi['hobbies']);
-            print_r($enfant);</pre>
-        <?php
-          $enfant = array_intersect($moi['hobbies'], $toi['hobbies']);
-          print_r($enfant);
-        ?>
-          <h3>Fusion (tous les hobbies de chaque array)</h3>
-          <?php
-          $fusHobbies = array_merge($moi['hobbies'], $to['hobbies']);
-          ?>
+    <h3>Remplacer ton nom de famille par Dieudonné</h3>
+    <pre>$moi['prenom'] = 'Dieudonné';</pre>
+    <h3>Intersection des hobbies en commun</h3>
+    <pre>$enfant = array_intersect($moi['hobbies'], $toi['hobbies']);<br>print_r($enfant);</pre>
+    <?php
+      $enfant = array_intersect($moi['hobbies'], $toi['hobbies']);
+      print_r($enfant);
+    ?>
+    <h3>Fusion (tous les hobbies de chaque array)</h3>
+    <?php
+      $fusHobbies = array_merge($moi['hobbies'], $toi['hobbies']);
+      print_r($fusHobbies);
+    ?>
+    <h3>Crée un tableau $web_development contenant une clef "frontend" et une clef "backend". À chaque clef, associe un sous-tableau vide.</h3>
+    <?php
+      $web_development = array(
+        'frontend' => array(),
+        'backend' => array()
+      );
+      array_push($web_development['frontend'], 'xhtml');
+      array_push($web_development['backend'], 'Ruby on Rails');
+      array_push($web_development['frontend'], 'CSS');
+      array_push($web_development['frontend'], 'Flash');
+      array_push($web_development['frontend'], 'Javascript');
+      $web_development["frontend"][0] = "html";
+      // $web_development['frontend']['html'] = $web_development['frontend']['xhtml'];
+      // array_push($web_development['frontend'], 'html');
+      // array_push($web_development[0][0],'html');
+      // array_splice($web_development['frontend']['xhtml'], $web_development['frontend']['html']);
+      // array_splice($web_development['frontend'][0], $web_development['frontend'][4]);
+      unset($web_development['frontend'][2]);
+      ?>
+      <pre><?php print_r($web_development); ?></pre>
 
-      </p>
+
+
+
    </body>
  </html>
