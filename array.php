@@ -32,6 +32,20 @@ $moi = array(
   'papa' => $papa
 );
 
+$toi = array(
+  'prenom' => 'Ame',
+  'nom' => 'Soeur',
+  'age' => '28',
+  'adresse' => 'rue Léon Bernus',
+  'numeroRue' => 46,
+  'codePostal' => 6000,
+  'ville' => 'Charleroi',
+  'fumeur' => false,
+  'sportif' => true,
+  'gluten' => false,
+  'hobbies' => array('guitare', 'chant', 'cuisine')
+);
+
  ?>
  <!DOCTYPE html>
  <html>
@@ -65,7 +79,29 @@ Additionne les deux et affiche le résultat.</h3>
           $nbrHobbyMoi = count($moi['hobbies']);
           echo "Nombre de hobbies de \$moi :  $nbrHobbyPapa<br>";
           $addhobbies = $nbrHobbyPapa + $nbrHobbyMoi;
+          echo "Addition : $addhobbies";
         ?>
+        <h3>la bonne syntaxe pour ajouter le hobby "Taxidermie" à ton tableau de "hobbies".</h3>
+        <?php
+          array_push($moi['hobbies'], 'Taxidermie');
+          // print_r($moi['hobbies'][3]);
+          ?>
+          <pre>array_push(\$moi['hobbies'], 'Taxidermie');</pre>
+
+        <h3>Remplacer ton nom de famille par Dieudonné</h3>
+          <pre>$moi['prenom'] = 'Dieudonné';"</pre>
+         <h3>Intersection des hobbies en commun</h3>
+          <pre>$enfant = array_intersect($moi['hobbies'], $toi['hobbies']);
+            print_r($enfant);</pre>
+        <?php
+          $enfant = array_intersect($moi['hobbies'], $toi['hobbies']);
+          print_r($enfant);
+        ?>
+          <h3>Fusion (tous les hobbies de chaque array)</h3>
+          <?php
+          $fusHobbies = array_merge($moi['hobbies'], $to['hobbies']);
+          ?>
+
       </p>
    </body>
  </html>
