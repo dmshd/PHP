@@ -1,30 +1,49 @@
 <?php
-ini_set(display_errors, 1);
+ini_set('display_errors', '1');
 $pronoms_personnels = array ('Je', 'Tu', 'Il/Elle','Nous', 'Vous', 'Elles/Ils');
  ?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Les boucles</title>
+    <title>Becode Charleroi - Turing v4 - Daniel Muyshond - PHP - Les boucles</title>
     <link rel="stylesheet" href="styles/style.css">
   </head>
+
   <body>
-    <h1>Les boucles</h1>
-    <h2>foreach</h2>
-    <h3>construis une boucle qui affiche chaque élément avec foreach</h3>
-    <pre>
+    <h1>Becode Charleroi - Turing v4 - Muyshond Daniel - PHP</h1>
+    <ul>
+     <a href="cats.php" class="menu"><li class="menuBtn">cats.php</li></a>
+     <a href="variables/Humans.php?nom=Ludovic" class="menu"><li class="menuBtn">Humans.php</li></a>
+     <a href="conditions.php" class="menu"><li class="menuBtn">conditions.php</li></a>
+     <a href="conditions-switch.php" class="menu"><li class="menuBtn">conditions-switch.php</li></a>
+     <a href="array.php" class="menu"><li class="menuBtn">array.php</li></a>
+     <a href="ternaire.php" class="menu"><li class="menuBtn">ternaire.php</li></a>
+     <a href="loop.php" class="menu"><li class="menuBtn">loop.php</li></a>
+     <a href="fonctions.php" class="menu"><li class="menuBtn">fonctions.php</li></a>
+    </ul>
+    <h2>Les boucles</h2>
+    <h3>foreach</h3>
+    <h3><code>$pronoms_personnels = array ('Je', 'Tu', 'Il/Elle','Nous', 'Vous', 'Elles/Ils');</code><br>
+        Construire une boucle qui affiche chaque élément de l'array à l'aide de foreach<br>
+        Ensuite, dans la boucle, conjuger le verbe "coder" en fonction du pronom. (utiliser une condition pour cela)</h3>
+    <p class="exo">
+    <pre class="PHP">
       foreach ($pronoms_personnels as $temp) {
       echo $temp;
       }
-  </pre>
-  <?php
-  foreach ($pronoms_personnels as $temp) {
-  echo $temp;
-  }
-   ?>
-  <h3>Ensuite, dans ta boucle, conjuge le verbe "coder" en fonction du pronom. (utilise une condition pour cela)</h3>
-    <p><pre>
+    </pre>
+    <span class="resultat">Résultat :</span><br>
+    <?php
+    foreach ($pronoms_personnels as $temp) {
+    echo $temp;
+    }
+     ?>
+    </p>
+
+    <h3>Ensuite, dans la boucle, conjuger le verbe "coder" en fonction du pronom. (utilise une condition pour cela)</h3>
+    <p class="exo">
+      <pre class="PHP">
       foreach ($pronoms_personnels as $pronom) {
         if ($pronom == "Je") {
           echo "$pronom code&#60;br&#62;";
@@ -46,6 +65,7 @@ $pronoms_personnels = array ('Je', 'Tu', 'Il/Elle','Nous', 'Vous', 'Elles/Ils');
         }
       }
     </pre>
+    <span class="resultat">Résultat :</span><br>
     <?php
     foreach ($pronoms_personnels as $pronom) {
       if ($pronom == "Je") {
@@ -73,15 +93,16 @@ $pronoms_personnels = array ('Je', 'Tu', 'Il/Elle','Nous', 'Vous', 'Elles/Ils');
     // }
     ?>
     </p>
-    <h2>while</h2>
-    <p>
-      <pre>
+    <h3>while</h3>
+    <p class="exo">
+      <pre class="PHP">
         while ($nombre_de_lignes <= 100)
         {
             echo $nombre_de_lignes . ': Je ne dois pas regarder les mouches voler quand j\'apprends le PHP.&#60;br /&#62;';
             $nombre_de_lignes++; // équivaut à écrire $nombre_de_lignes = $nombre_de_lignes +1;
         }
       </pre>
+      <span class="resultat">Résultat :</span><br>
       <?php
       $nombre_de_lignes = 1;
 
@@ -92,14 +113,15 @@ $pronoms_personnels = array ('Je', 'Tu', 'Il/Elle','Nous', 'Vous', 'Elles/Ils');
       }
        ?>
     </p>
-    <h2>for</h2>
-    <p>
-      <pre>
+    <h3>for</h3>
+    <p class="exo">
+      <pre class="PHP">
         for ($nombre_de_lignes = 1; $nombre_de_lignes <= 100; $nombre_de_lignes++)
         {
             echo 'Ceci est la ligne n°' . $nombre_de_lignes . '&#60;br&#62; />';
         }
       </pre>
+      <span class="resultat">Résultat :</span><br>
       <?php
       for ($nombre_de_lignes = 1; $nombre_de_lignes <= 100; $nombre_de_lignes++)
       {
@@ -107,8 +129,8 @@ $pronoms_personnels = array ('Je', 'Tu', 'Il/Elle','Nous', 'Vous', 'Elles/Ils');
       }
        ?>
     </p>
-    <p>
-       <h3>Ecris une boucle qui affiche les numéros de 1 à 120 à l'aide de  while</h3>
+    <p class="exo">
+       <h3>Ecrire une boucle qui affiche les numéros de 1 à 120 à l'aide de  while</h3>
        <pre>
          $numeros = 1;
          while ($numeros <= 120) {
@@ -116,6 +138,7 @@ $pronoms_personnels = array ('Je', 'Tu', 'Il/Elle','Nous', 'Vous', 'Elles/Ils');
            $numeros++;
          }
        </pre>
+       <span class="resultat">Résultat :</span><br>
        <?php
         $numeros = 1;
         while ($numeros <= 120) {
@@ -124,20 +147,23 @@ $pronoms_personnels = array ('Je', 'Tu', 'Il/Elle','Nous', 'Vous', 'Elles/Ils');
         }
         ?>
       </p>
-      <h3>Ecris une boucle qui affiche les numéros de 1 à 120 à l'aide de  for</h3>
-      <pre>
+      <h3>Ecrire une boucle qui affiche les numéros de 1 à 120 à l'aide de  for</h3>
+      <p class="exo">
+      <pre class="PHP">
         for ($nFor =  0; $nFor <= 120; $nFor++) {
           echo $nFor . '&#60;br&#62;';
         }
       </pre>
+      <span class="resultat">Résultat :</span><br>
       <?php
        for ($nFor =  0; $nFor <= 120; $nFor++) {
          echo $nFor . '<br>';
        }
        ?>
      </p>
-     <h3>Crée un tableau contenant tous les prénoms des personnes composant ta classe. Affiche ces prénoms à l'aide d'une boucle.</h3>
-     <pre>
+     <h3>Créer un tableau contenant tous les prénoms des personnes composant ta classe. Affiche ces prénoms à l'aide d'une boucle.</h3>
+     <p class="exo">
+     <pre class="PHP">
        function print_r2($val){
          echo '&#60;pre&#62;';
          print_r($val);
@@ -149,6 +175,7 @@ $pronoms_personnels = array ('Je', 'Tu', 'Il/Elle','Nous', 'Vous', 'Elles/Ils');
          echo $turingcount . '&#60;br&#62;';
        }
      </pre>
+     <span class="resultat">Résultat :</span><br>
      <?php
       $turingv4 = array(
         'Steve',
@@ -188,15 +215,18 @@ $pronoms_personnels = array ('Je', 'Tu', 'Il/Elle','Nous', 'Vous', 'Elles/Ils');
         echo $turingcount . '<br>';
       }
       ?>
-      <h3>Crée un tableau contenant au moins 10 pays du monde. Une fois fait, utilise une boucle pour générer du html correspondant à une selectbox permettant à un utilisateur d'indiquer son pays dans un formulaire html.</h3>
-      <pre>
+      </p>
+      <h3>Créer un tableau contenant au moins 10 pays du monde. Une fois fait, utilise une boucle pour générer du html correspondant à une selectbox permettant à un utilisateur d'indiquer son pays dans un formulaire html.</h3>
+      <p class="exo">
+      <pre class="PHP">
         $dixpays = array('France', 'Allemagne', 'Zimbabwe', 'Bulgarie', 'Etats-Unis', 'Russie', 'Yemen', 'Mongolie', 'Pérou', 'Corée-du-nord' );
         foreach ($dixpays as $payscount) {
           echo '&#60;p&#62;' . $payscount . '&#60;/p&#62;';
         }
       </pre>
-      <p>
-        <?php
+
+      <span class="resultat">Résultat :</span><br>
+      <?php
           $dixpays = array(
             'FR' => 'France',
             'DE' => 'Allemagne',
@@ -213,20 +243,23 @@ $pronoms_personnels = array ('Je', 'Tu', 'Il/Elle','Nous', 'Vous', 'Elles/Ils');
             echo '<p>' . $payscount . '</p>';
           }
           $dixpaysIso = array_keys($dixpays);
-        ?>
-        <h3>Utilise la clef pour qu'elle devienne la valeur de la balise option dans ton html</h3>
-        <pre>
+      ?>
+      </p>
+      <h3>Utiliser la clef pour qu'elle devienne la valeur de la balise option dans ton html</h3>
+      <p class="exo">
+      <pre class="PHP">
           foreach ($dixpaysIso as $key => $value) {
             echo '&#60;option value="' . $key . '"&#62;' . $value . '&#60;/option>';
           }
-        </pre>
-        <select>
+      </pre>
+      <span class="resultat">Résultat :</span><br>
+      <select>
           <?php
             foreach ($dixpaysIso as $key => $value) {
               echo '<option value="' . $key . '">' . $value . '</option>';
             }
           ?>
-        </select>
+      </select>
       </p>
 
   </body>

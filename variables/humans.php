@@ -3,6 +3,7 @@
 ini_set('display_errors', 1);
 
 $prénom = 'Daniel';
+$monage = 28;
 $faim = false;
 $couleurdesyeux = 'brun';
 $famille = array(0 => 'Christian', 1 => 'Jocelyne', 2 => 'Catherine', 3 => 'Daniel');
@@ -14,45 +15,47 @@ $minute = date("i");
 ?>
 
 <html>
-  <head><title>Hi!</title></head>
-  <link rel="stylesheet" href="../styles/style.css">
+  <head>
+    <title>Becode Charleroi - Turing v4 - Daniel Muyshond - Les variables</title>
+    <link rel="stylesheet" href="../styles/style.css">
+  </head>
+
   <body>
-    <!-- <h1>Bonjour <?php echo $_GET['nom']; ?>!</h1> -->
-<?php
+    <h1>Becode Charleroi - Turing v4 - Muyshond Daniel - PHP</h1>
+    <ul>
+     <a href="../cats.php" class="menu"><li class="menuBtn">cats.php</li></a>
+     <a href="Humans.php?nom=Ludovic" class="menu"><li class="menuBtn">Humans.php</li></a>
+     <a href="../conditions.php" class="menu"><li class="menuBtn">conditions.php</li></a>
+     <a href="../conditions-switch.php" class="menu"><li class="menuBtn">conditions-switch.php</li></a>
+     <a href="../array.php" class="menu"><li class="menuBtn">array.php</li></a>
+     <a href="../ternaire.php" class="menu"><li class="menuBtn">ternaire.php</li></a>
+     <a href="../loop.php" class="menu"><li class="menuBtn">loop.php</li></a>
+     <a href="../fonctions.php" class="menu"><li class="menuBtn">fonctions.php</li></a>
+    </ul>
+    <h1>Bonjour <?php echo $_GET['nom']; ?>!</h1>
+    <h2>Les variables</h2>
+      <h3>Initie une variable décrivant ton prénom.</h3>
+      <p class="exo">
+      <pre class="PHP">$prénom = 'Daniel';</pre>
+      </p>
+      <h3>Ensuite, sur une seconde ligne, initie une variable qui représente ton âge.</h3>
+      <p class="exo">
+      <pre class="PHP">$monage = 28;</pre>
+      </p>
+      <h3>Ensuite, à la ligne suivante, initie une variable qui décrive si tu as faim ou pas.</h3>
+      <p class="exo">
+      <pre class="PHP">$faim = false;</pre>
+      </p>
+      <h3>Ensuite, à la ligne suivante, initie une variable qui décrive la couleur de tes yeux.</h3>
+      <p class="exo">
+      <pre class="PHP">$couleurdesyeux = 'brun';</pre>
+      </p>
+      <h3>Ensuite, à la ligne suivante, initie une variable qui décrive ta famille (avec une variable Tableau, dont chaque entrée est le prénom d'un membre de ta famille).</h3>
+      <p class="exo">
+      <pre class="PHP">$famille = array(0 => 'Christian', 1 => 'Jocelyne', 2 => 'Catherine', 3 => 'Daniel');</pre>
+      </p>
+      <br>
 
-$heure = date("H");
-
-if ( $heure >= 16 and $heure <= 17) {
-  echo "<p>Bonjour !</p>";
-}elseif ($heure >= 9 and $heure < 12) {
-  echo "<p>Bonne journée !</p>";
-}elseif ($heure >= 12 and $heure < 16) {
-  echo "<p>Bon après-midi !</p>";
-}elseif ($heure >= 16 and $heure < 21) {
-  echo "<p>Bonne soirée !</p>";
-}elseif ($heure >= 21 and $heure < 5) {
-  echo "<p>Bonne nuit !</p>";
-}else {
-  echo "<p>Bonjour !</p>";
-}
-
-    if ( $chambre_est_sale == "dégoutante" ) {
-      echo "<p>C'est immonde !</p>";
-      echo "\n";
-    }elseif ( $chambre_est_sale == "immaculée" ) {
-      echo "<p>C'est bien propre !</p>";
-      echo "\n";
-    }elseif ( $chambre_est_sale == "maniaque" ) {
-      echo "<p>Ne prête pas trop d'attention aux détails !</p>";
-      echo "\n";
-    }else {
-      echo "<p>Je n'ai pas encore vu ta  chambre.</p>";
-      echo "\n";
-    }
-
-
-  ?>
-  <br>
   <p>
     <form method="get" action="humans.php">
       Quel âge as-tu ?
@@ -65,134 +68,7 @@ if ( $heure >= 16 and $heure <= 17) {
 
     <?php
 
-if (isset($_GET['quelage']) AND isset($_GET['sexe']) AND isset($_GET['anglais']) AND isset($_GET['note']) ) {
-    $age = $_GET['quelage'];
-    $genre = $_GET['sexe'];
-    $anglais = $_GET['anglais'];
-    $note = $_GET['note'];
 
-    if ( $age < 115 ) {
-
-      if ( $age >= 18 ) {
-
-        if ( $genre == "feminin" and $anglais == "non" ) {
-          if ( $age >= 21 and $age <= 40 ) {
-          echo "<p>Bonjour Madame, bienvenue parmi nous !</p>";
-        }else {
-          echo "<p>Bonjour Madame. Désolé vous n'entrez pas dans les criètres de sélection...</p>";
-          }
-        }
-        elseif ( $genre == "feminin" and $anglais == "oui" ) {
-          if ( $age >= 21 and $age <= 40 ) {
-          echo "<p>Hello Lady, Welcome onboard !</p>";
-        }else {
-          echo "<p>Hello Lady. Sorry, you are not selected...</p>";
-          }
-        }
-        elseif ( $genre == "masculin" and $anglais == "non" ) {
-          echo "<p>Bonjour Monsieur.</p>";
-        }
-        elseif ( $genre == "masculin" and $anglais == "oui") {
-          echo "<p>Hello Sir.</p>";
-        }
-      }elseif ( $age > 12 and $age < 18 ) {
-        if ( $genre == "feminin" and $anglais == "non" ) {
-          echo "<p>Bonjour Mademoiselle.</p>";
-        }
-        elseif ( $genre == "feminin" and $anglais == "oui" ) {
-          echo "<p>Hello Girl.</p>";
-        }
-        elseif ( $genre == "masculin" and $anglais == "non" ) {
-          echo "<p>Bonjour jeune homme.</p>";
-        }
-        elseif ( $genre == "masculin" and $anglais == "non" ) {
-          echo "<p>Hello Boy.</p>";
-        }
-
-      }elseif ( $age <= 12 ) {
-        if ( $genre == "feminin" and $anglais == "non" ) {
-        echo "<p>Salut petite !</p>";
-        }
-        elseif ( $genre == "feminin" and $anglais == "oui" ) {
-          echo "<p>Hello Teenage girl !</p>";
-        }
-        elseif ( $genre == "masculin" and $anglais == "non") {
-          echo "<p>Salut petit !</p>";
-        }
-        elseif ( $genre == "masculin" and $anglais == "oui")
-          echo "<p>Hello Teenage boy !";
-      }
-
-    }elseif ( $genre == "feminin" and $anglais == "non") {
-      echo "<p> Wow ! Toujours vivante ?</p>";
-    }
-    elseif ( $genre == "feminin" and $anglais == "oui") {
-      echo "<p> Wow ! Hello Lady. You're still alive !</p>";
-    }
-    elseif ( $genre == "masculin" and $anglais == "non") {
-      echo "<p> Wow ! Toujours vivant ?</p>";
-    }
-    elseif ( $genre == "masculin" and $anglais == "oui") {
-      echo "<p> Wow ! Hello Sir. You're still alive !</p>";
-    }
-
-    if ( $note >= 1 and $note <= 3) {
-      if ($anglais == "non") {
-        echo "<p>Ce travail est nul !</p>";
-      }
-      elseif ($anglais == "oui") {
-        echo "<p>This is shit.</p>";
-      }
-    }
-    elseif ($note <= 6 and $note <= 9) {
-      if ($anglais == "non") {
-        echo "<p>Ce travail n'est pas terrible.</p>";
-      }
-      elseif ($anglais == "oui") {
-        echo "<p> This work is bad. </p>";
-      }
-    }
-    elseif ($note == 10 ) {
-      if ($anglais == "non") {
-        echo "<p>Tout juste !</p>";
-      }
-      elseif ($anglais == "oui") {
-        echo "<p>Just the half.</p>";
-      }
-    }
-    elseif ($note >= 11 and $note <= 14) {
-      if ($anglais == "non") {
-        echo "<p>C'est pas mal.</p>";
-      }
-      elseif ($anglais == "oui") {
-        echo "<p>Not bad.</p>";
-      }
-    }
-    elseif ($note >=15 and $note <= 18) {
-      if ($anglais == "non") {
-        echo "<p>Bravo !</p>";
-      }
-      elseif ($anglais == "oui") {
-        echo "<p>Congrats.</p>";
-      }
-    }
-    elseif ($note >= 19 and $note <= 20) {
-      if ($anglais == "non") {
-        echo "<p>Tu as triché ? ;-)</p>";
-      }
-      elseif ($anglais == "oui") {
-        echo "<p>Have you cheated ? ;-)</p>";
-      }
-    }
-    elseif ($note > 20) {
-      if ($anglais == "non") {
-        echo "<p>Tu ne peux pas avoir eu plus de 20 sur 20. Essaye encore :-)</p>";
-      }
-      elseif ($anglais == "oui") {
-        echo "<p>more than 20/20 is impossible. Try again. :-)</p>";
-      }
-    }
-  }
      ?>
 
     </form>
